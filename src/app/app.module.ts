@@ -8,9 +8,10 @@ import {
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ChannelComponent } from './channel/channel.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ChannelComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
