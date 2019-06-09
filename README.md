@@ -1,5 +1,17 @@
 # JsframeworkbookAngular
 
+「React, Angular, Vue.js, React-Native を使って学ぶ はじめてのフロントエンド開発」の Angular 版の実装
+
+## 書籍との相違点
+
+- npm ではなく yarn を使用しています
+  ```
+  ng config -g cli.packageManager yarn
+  ```
+- 依存ライブラリは基本的に実装時点での最新版を使用しています
+
+----
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
 ## Development server
