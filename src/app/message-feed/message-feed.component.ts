@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { MessageService } from '../services/message.service';
 import { Message } from '../shared/models/message';
@@ -18,6 +18,11 @@ export class MessageFeedComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.refresh();
+    this.messageService.waiting.subscribe(_ => this.refresh());
+  }
+
+  refresh() {
     this.messagesObservable = this.route.paramMap.pipe(
       switchMap(params => this.messageService.fetch(params.get('name'))),
     );

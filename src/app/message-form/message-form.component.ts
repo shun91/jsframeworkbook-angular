@@ -16,9 +16,13 @@ export class MessageFormComponent implements OnInit {
 
   sendMessage() {
     if (this.message) {
-      this.messageService
-        .post(this.cname, this.message)
-        .subscribe(_ => (this.message = ''), e => console.log(e));
+      this.messageService.post(this.cname, this.message).subscribe(
+        _ => {
+          this.message = '';
+          this.messageService.notify();
+        },
+        e => console.log(e),
+      );
     }
   }
 }
